@@ -1,0 +1,28 @@
+ .list-items{
+          color: rgba(31, 31, 32, 0.6);
+          text-decoration: none;
+          padding: 1.25rem 4rem;
+          margin: .25rem 0;
+          border-left: 4px solid transparent;
+           width: 100%;
+          
+        }
+
+ .logOut{
+      text-decoration: none;
+          padding: 1.25rem 4rem;
+          margin: .25rem 0;
+          border-left: 4px solid transparent;
+           width: 100%;
+ }      
+.list-items:hover{
+     background: rgba(169, 82, 242, 0.1);
+      border-left-color: #A952F2;
+}
+
+ .line{
+          width: 100%;
+          margin: 1rem 0;
+          background: #EEF1F8;
+          opacity: 0.5;
+        }

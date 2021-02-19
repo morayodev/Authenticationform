@@ -1,0 +1,59 @@
+.LogIn{
+ background:rgba(169, 82, 242, 1)
+}
+ 
+.SignIn{
+    background-color:#fff;
+    color:rgba(169, 82, 242, 1);
+    border:2px solid rgba(169, 82, 242, 1);
+
+}
+.Vector{
+    /* width:50%;
+    margin:auto; */
+    z-index: 1;
+    position: relative;
+    bottom:-10%;
+    overflow: hidden; 
+}
+.Man{
+    position:relative;
+    z-index: 2;
+    margin-top: -90%;
+    margin-left:20%
+}
+.Rec{
+    z-index: 1;
+    position: relative;
+    width:100%;
+    /* bottom:-10%;
+    overflow: hidden; */
+}
+.Sally{
+    position: relative;
+    z-index: 2;
+    margin-top: -100%;
+   
+}
+.sally13{
+    position: relative;
+    z-index: 2;
+    margin-top: -100%;
+   
+}
+.formgroup{
+    display:block;
+}
+.form{
+    /* display:block; */
+    border:1px solid #ccc;
+    border-radius: 5px;
+    padding:15px;
+    width:544px;
+}
+ @media (max-width: 640px) {
+     .form{
+         padding:5px;
+         width:100%;
+     }
+ }

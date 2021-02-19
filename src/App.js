@@ -7,21 +7,26 @@ import SignIn from "./components/Login/SignIn"
 import LogIn from "./components/Login/LogIn";
 import SignIn1 from "./components/Login/SignIn1"
 import { AuthProvider } from "./Context/AuthContex";
-
-
+// import Sidebar from "./components/Sidebar/Sidebar"
+import Dashbord from "./components/Dashboard/Dashbord"
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute"
 
 function App() {
   return (
     <AuthProvider>
       <Switch>
-        <Route exact path="/" component={Builder} />
+        <PrivateRoute exact path="/" component={Builder} />
         {/* <Route exact path="/Login1" component={Login1} /> */}
-        <Route exact path="/LogIn" component={LogIn} />
-
+        <Route  path="/LogIn" component={LogIn} />
+        {/* <LogIn/> */}
         {/* <Route exact path="/SignIn" component={SignIn} /> */}
-        <Route exact path="/SignIn1" component={SignIn1} />
+        <Route   path="/SignIn1" component={SignIn1} />
+        <Route exact path="/Dashbord" component={Dashbord} />
       </Switch>
+
       {/* <Login1/> */}
+      {/* <Sidebar /> */}
+      {/* <Dashbord /> */}
     </AuthProvider>
   );
 }  
