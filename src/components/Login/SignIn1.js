@@ -35,10 +35,7 @@ const SignIn1 = () => {
         });
       };
 
-      // const handleSubmit = (e) => {
-      //   e.preventDefault();
-      //   setErrors(validation(values));
-      // }
+      
 
   async function handleSubmit(e) {
     e.preventDefault();

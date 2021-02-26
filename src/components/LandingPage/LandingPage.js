@@ -1,25 +1,23 @@
-import React from 'react'
+import React,{useState} from 'react'
 import logo from "../images/logo 2.png"
 import "../Login/LandingPage.css"
 import Man from "../images/Saly-14.png"
 import Vector from "../images/Vector.png"
 import { Link } from "react-router-dom";
-import {GiHamburgerMenu} from "react-icons/gi"
-// import PrivateRoute from "./components/PrivateRoute/PrivateRoute"
+import Toolbar from "../Toolbar/Toolbar"
+import Sidedrawer from "../Sidedrawer/Sidedrawer"
+
 
 
 function LandingPage() {
 
-    return (
+  return (
+    <>
+     
       <div className="mx-0 md:mx-20">
-        <div className="flex justify-between">
-          <img src={logo} alt="logo" />
-          <div
-            className="block md:hidden m-5 text-2xl"
-            style={{ color: "rgba(169, 82, 242, 1)" }}
-          >
-            <GiHamburgerMenu />
-          </div>
+        <div className="flex justify-between ">
+          <img className="md:flex hidden" src={logo} alt="logo" />
+        
           <div className="hidden md:flex md:items-center ">
             <Link to="/LogIn">
               <button className="mx-5 border rounded-lg LogIn p-5 md:px-10 md:py-5 text-white">
@@ -42,7 +40,7 @@ function LandingPage() {
             <p className="font-semibold text-2xl md:text-3xl ml-5 mb-10">
               Anytime.Anyday
             </p>
-            <Link to="/Dashbord">
+            <Link to="/Dashboard">
               <button className="mx-5 border rounded-lg LogIn px-10 py-5 text-white">
                 Get Started
               </button>
@@ -54,7 +52,9 @@ function LandingPage() {
           </div>
         </div>
       </div>
-    );
+    
+    </>
+  );
 }
 
 export default LandingPage

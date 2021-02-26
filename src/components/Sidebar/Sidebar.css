@@ -25,4 +25,16 @@
           margin: 1rem 0;
           background: #EEF1F8;
           opacity: 0.5;
+        } 
+ .image{
+       width:146px;
+       height: 146px;
+
         }
+
+ @media (max-width: 640px) {
+       .list-items, .logOut{
+       padding: 10px;
+
+        }
+     }
