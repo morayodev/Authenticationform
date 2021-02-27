@@ -40,7 +40,7 @@ function Sidedrawer(props) {
             <p>adehaalewa64@gmail.com</p>
           </div>
           <ul>
-            <Link to="/Dashbord">
+            <Link to="/Dashboard">
               <li className="list-items">
                 <i className="far fa-home-lg-alt icons"></i>
                 Dashboard

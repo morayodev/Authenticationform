@@ -10,6 +10,7 @@
     /* padding: 32px 16px; */
     box-sizing: border-box;
     transition: transform 0.3s ease-out;
+    overflow-y: scroll;
       /* transition: visibility 0s linear 300ms, opacity 300ms; */
   
  
