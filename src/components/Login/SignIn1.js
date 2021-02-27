@@ -6,7 +6,6 @@ import sally13 from "../images/Saly-13 (1).png";
 import rec from "../images/Rectangle 1.png";
 import logo from "../images/logo 2.png";
 import { useAuth } from "../../Context/AuthContex"
-import validation from "./validation"
 
 const SignIn1 = () => {
   const [error, setError] = useState("");
