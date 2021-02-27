@@ -118,7 +118,7 @@ const LogIn = (props) => {
           <div className="flex justify-between items-center form mt-2">
             <input
               id="password"
-              className="mt-2"
+              className="mt-2 outline-none"
               name="password"
               type={password ? "password" : "text"}
               ref={passwordRef}

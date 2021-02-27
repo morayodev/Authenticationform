@@ -35,10 +35,7 @@ const SignIn1 = () => {
         });
       };
 
-      // const handleSubmit = (e) => {
-      //   e.preventDefault();
-      //   setErrors(validation(values));
-      // }
+      
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -133,7 +130,7 @@ const SignIn1 = () => {
           )}
           <div className="flex justify-between items-center form my-3">
             <input
-              className=""
+              className="outline-none"
               type={password ? "password" : "text"}
               id="password"
               ref={passwordRef}
@@ -155,7 +152,7 @@ const SignIn1 = () => {
           </label>
           <div className="flex justify-between items-center form mt-2">
             <input
-              className="mt-2"
+              className="mt-2 outline-none"
               type={password ? "password" : "text"}
               id="confirmpassword"
               ref={confirmPasswordRef}

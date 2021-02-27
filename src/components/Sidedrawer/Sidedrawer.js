@@ -1,44 +1,46 @@
-import React,{useState} from 'react'
-import logo from "../images/logo 2.png";
+import React,{ useState } from 'react'
+import "./Sidedrawer.css"
 import User from "../images/user.jpg";
-import "./Sidebar.css"
-import {useHistory} from "react-router-dom"
-import { useAuth } from "../../Context/AuthContex"
-import { Link } from "react-router-dom"
+import "../Sidebar/Sidebar.css";
+import { useHistory } from "react-router-dom";
+import { useAuth } from "../../Context/AuthContex";
+import { Link } from "react-router-dom";
 
-function Sidebar() {
-  const { logout } = useAuth()
-  const [error, setError] = useState("")
-  const history = useHistory()
-  
+
+
+
+function Sidedrawer(props) {
+      const {  children } = props;
+
+  const { logout } = useAuth();
+  const [error, setError] = useState("");
+  const history = useHistory();
 
   async function handleLogout() {
-    setError("")
-      try {
-      await logout()
-      history.push("/LogIn")
+    setError("");
+    try {
+      await logout();
+      history.push("/LogIn");
     } catch {
-      setError("Failed to log Out")
+      setError("Failed to log Out");
     }
-  
   }
   return (
     <>
-      <div
-        className="hidden md:block  w-3/12"
-        style={{ color: "rgba(64, 64, 64, 0.68)" }}
-      >
-        {error && <p className="text-red-700">{error}</p>}
-     
-          <div className="flex flex-col justify-center items-center">
-            <img className="rounded-full image" src={User} alt="my hero" />
-            <h3 className="font-bold text-2xl text-black mt-3">
-              Hello, Alsaheem
-            </h3>
+      <div className={(props.open ? "Open" : "Close") + " SideDrawer"}>
+        <div
+          className="md:mx-0 mx-10"
+          style={{ color: "rgba(64, 64, 64, 0.68)" }}
+        >
+          {error && <p className="text-red-700">{error}</p>}
+
+          <div className="flex flex-col ">
+            <img className="rounded-full h-24 w-24" src={User} alt="my hero" />
+            <h3>Hello, Alsaheem</h3>
             <p>adehaalewa64@gmail.com</p>
           </div>
           <ul>
-            <Link to="/Dashbord">
+            <Link to="/Dashboard">
               <li className="list-items">
                 <i className="far fa-home-lg-alt icons"></i>
                 Dashboard
@@ -78,7 +80,7 @@ function Sidebar() {
               <i className="fal fa-cog icons"></i>
               <a href="#">Settings</a>
             </li>
-            <hr classname="line" />
+            <hr className="line" />
             <li className="text-red-700 logOut">
               <i className="fal fa-sign-out"></i>
               <a href="#" onClick={handleLogout}>
@@ -86,11 +88,16 @@ function Sidebar() {
               </a>
             </li>
           </ul>
-      
+        </div>
       </div>
     </>
   );
-     
+  
+  
+
+          
+   
+  
 }
 
-export default Sidebar
+export default Sidedrawer
