@@ -78,7 +78,7 @@ function Sidebar() {
               <i className="fal fa-cog icons"></i>
               <a href="#">Settings</a>
             </li>
-            <hr classname="line" />
+            <hr className="line" />
             <li className="text-red-700 logOut">
               <i className="fal fa-sign-out"></i>
               <a href="#" onClick={handleLogout}>

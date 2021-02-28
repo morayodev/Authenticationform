@@ -6,11 +6,11 @@ import sally13 from "../images/Saly-13 (1).png";
 import rec from "../images/Rectangle 1.png";
 import logo from "../images/logo 2.png";
 import { useAuth } from "../../Context/AuthContex"
-import validation from "./validation"
+import formSchema from "./validation";
+import {Formik, Field, Form, ErrorMessage } from "formik";
 
 const SignIn1 = () => {
   const [error, setError] = useState("");
-  const [validate, setValidate] = useState({});
   const [loading, setLoading] = useState(false);
   const emailRef = useRef();
   const numberRef = useRef();
@@ -19,23 +19,6 @@ const SignIn1 = () => {
   const nameRef = useRef();
   const { signup, currentUser } = useAuth();
   const history = useHistory();
-
-      const [values, setValues] = useState({
-        name: "",
-        email: "",
-        number: "",
-        password: "",
-      });
- 
-      const handleChange = (e) => {
-        const { name, value } = e.target;
-        setValues({
-          ...values,
-          [name]: value,
-        });
-      };
-
-      
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -80,97 +63,125 @@ const SignIn1 = () => {
 
         {/* {currentUser && currentUser.email} */}
         {error && <p className="text-red-700 text-3xl">{error}</p>}
-        <form onSubmit={handleSubmit}>
-          <label
-            htmlFor="name"
-            className="text-xl "
-            style={{ color: "rgba(64, 64, 64, 1)" }}
-          >
-            Name
-          </label>
-          <input className="form my-3" type="text" id="name" ref={nameRef} />
-          <label
-            htmlFor="email"
-            className="text-xl "
-            style={{ color: "rgba(64, 64, 64, 1)" }}
-          >
-            Email Address
-          </label>
-          {validate.email && <p className="text-red-700">{validate.email}</p>}
+        <Formik
+          initialValues={{
+            name: "",
+            email: "",
+            number: "",
+            password: "",
+            confirm: "",
+          }}
+          validationSchema={formSchema}
+        >
+          {({ errors, handleChange, values}) => {
+            return (
+              <form onSubmit={handleSubmit}>
+                <label
+                  htmlFor="name"
+                  className="text-xl "
+                  style={{ color: "rgba(64, 64, 64, 1)" }}
+                >
+                  Name
+                </label>
+                <input
+                  className="form my-3"
+                  type="text"
+                  id="name"
+                  ref={nameRef}
+                  onChange={handleChange}
+                  value={values.name}
+                />
+                <p className="text-red-700 text3xl">{errors.name}</p>
 
-          <input
-            className=" form my-3"
-            type="email"
-            id="email"
-            required
-            ref={emailRef}
-          />
-          <label
-            htmlFor="number"
-            className="text-xl"
-            style={{ color: "rgba(64, 64, 64, 1)" }}
-          >
-            Phone Number
-          </label>
-          <input
-            className=" form my-3"
-            type="number"
-            id="number"
-            ref={numberRef}
-          />
-          <label
-            htmlFor="password"
-            className="formgroup  text-xl"
-            style={{ color: "rgba(64, 64, 64, 1)" }}
-          >
-            Password
-          </label>
-          {validate.password && (
-            <p className="text-red-700">{validate.password}</p>
-          )}
-          <div className="flex justify-between items-center form my-3">
-            <input
-              className="outline-none"
-              type={password ? "password" : "text"}
-              id="password"
-              ref={passwordRef}
-              //   value={values.password}
-              //  onChange={handleChange}
-            />
-            {password ? (
-              <AiOutlineEyeInvisible onClick={changePassword} />
-            ) : (
-              <AiOutlineEye onClick={changePassword} />
-            )}
-          </div>
-          <label
-            htmlFor="password"
-            className="formgroup my-3 text-xl"
-            style={{ color: "rgba(64, 64, 64, 1)" }}
-          >
-            Confirmed Password
-          </label>
-          <div className="flex justify-between items-center form mt-2">
-            <input
-              className="mt-2 outline-none"
-              type={password ? "password" : "text"}
-              id="confirmpassword"
-              ref={confirmPasswordRef}
-            />
-            {password ? (
-              <AiOutlineEyeInvisible onClick={changePassword} />
-            ) : (
-              <AiOutlineEye onClick={changePassword} />
-            )}
-          </div>
-          <button
-            disabled={loading}
-            className="form mt-10 text-white rounded-lg"
-            style={{ backgroundColor: "rgba(169, 82, 242, 1)" }}
-          >
-            Signup
-          </button>
-        </form>
+                <label
+                  htmlFor="email"
+                  className="text-xl "
+                  style={{ color: "rgba(64, 64, 64, 1)" }}
+                >
+                  Email Address
+                </label>
+                <input
+                  className=" form my-3"
+                  type="email"
+                  id="email"
+                  required
+                  ref={emailRef}
+                  onChange={handleChange}
+                  value={values.email}
+                />
+                <p className="text-red-700 text3xl">{errors.email}</p>
+
+                <label
+                  htmlFor="number"
+                  className="text-xl"
+                  style={{ color: "rgba(64, 64, 64, 1)" }}
+                >
+                  Phone Number
+                </label>
+                <input
+                  className=" form my-3"
+                  type="number"
+                  id="number"
+                  ref={numberRef}
+                  onChange={handleChange}
+                  value={values.number}
+                />
+                <p className="text-red-700 text3xl">{errors.phoneNumber}</p>
+                <label
+                  htmlFor="password"
+                  className="formgroup  text-xl"
+                  style={{ color: "rgba(64, 64, 64, 1)" }}
+                >
+                  Password
+                </label>
+                <div className="flex justify-between items-center form my-3">
+                  <input
+                    className="outline-none"
+                    type={password ? "password" : "text"}
+                    id="password"
+                    ref={passwordRef}
+                    onChange={handleChange}
+                    value={values.password}
+                  />
+                  {password ? (
+                    <AiOutlineEyeInvisible onClick={changePassword} />
+                  ) : (
+                    <AiOutlineEye onClick={changePassword} />
+                  )}
+                </div>
+                <p className="text-red-700 text3xl">{errors.password}</p>
+                <label
+                  htmlFor="password"
+                  className="formgroup my-3 text-xl"
+                  style={{ color: "rgba(64, 64, 64, 1)" }}
+                >
+                  Confirmed Password
+                </label>
+                <div className="flex justify-between items-center form mt-2">
+                  <input
+                    className="mt-2 outline-none"
+                    type={password ? "password" : "text"}
+                    id="confirmpassword"
+                    ref={confirmPasswordRef}
+                  />
+                  {password ? (
+                    <AiOutlineEyeInvisible onClick={changePassword} />
+                  ) : (
+                    <AiOutlineEye onClick={changePassword} />
+                  )}
+                </div>
+                <p className="text-red-700 text3xl">{errors.password}</p>
+                <button
+                  disabled={loading}
+                  className="form mt-10 text-white rounded-lg"
+                  style={{ backgroundColor: "rgba(169, 82, 242, 1)" }}
+                >
+                  Signup
+                </button>
+              </form>
+            );
+          }}
+        </Formik>
         <p className="text-center mt-5">
           <span style={{ color: "rgba(64, 64, 64, 0.6)" }}>
             Already have an account?
@@ -187,6 +198,5 @@ const SignIn1 = () => {
     </div>
   );
 };
-
 
 export default SignIn1;
