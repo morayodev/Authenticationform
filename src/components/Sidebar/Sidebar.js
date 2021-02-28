@@ -65,19 +65,19 @@ function Sidebar() {
             </Link>
             <li className="list-items">
               <i className="fal fa-database icons"></i>
-              <a href="./senddata.html">Data</a>
+              Data
             </li>
             <li className="list-items">
               <i className="fas fa-history icons"></i>
-              <a href=" https://github.com/">History</a>
+             History
             </li>
             <li className="list-items">
               <i className="far fa-bell icons"></i>
-              <a href=" https://github.com/">Notification</a>
+             Notification
             </li>
             <li className="list-items">
               <i className="fal fa-cog icons"></i>
-              <a href=" https://github.com/">Settings</a>
+             Settings
             </li>
             <hr classname="line" />
             <li className="text-red-700 logOut" onClick={handleLogout}>
