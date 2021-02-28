@@ -5,6 +5,7 @@ import Toolbar from "../Toolbar/Toolbar"
 import Dashboard from "../Dashboard/Dashboard";
 import { Route, Switch } from "react-router-dom";
 
+
 const Builder = (props) => {
      const [showSidedrawer, setSidedrawer] = useState(false);
 
@@ -30,10 +31,12 @@ const Builder = (props) => {
           open={showSidedrawer}
           navState={showSidedrawer}
           click={setRemover}
-          closed={setSidedrawerhandler} 
+          closed={setSidedrawerhandler}
         />
         {/* <Dashboard/> */}
-          {/* <Route path="/Dashboard" component={Dashboard} /> */}
+        {/* <Route path="/Dashboard" component={Dashboard} /> */}
+        {/* <Route exact path="/Dashboard" component={Dashboard} /> */}
+        {/* <Dashboard/> */}
       </div>
     );
 }

@@ -40,7 +40,7 @@ function LandingPage() {
             <p className="font-semibold text-2xl md:text-3xl ml-5 mb-10">
               Anytime.Anyday
             </p>
-            <Link to="/Dashboard">
+            <Link to="/Builder">
               <button className="mx-5 border rounded-lg LogIn px-10 py-5 text-white">
                 Get Started
               </button>
