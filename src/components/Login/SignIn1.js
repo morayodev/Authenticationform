@@ -1,6 +1,6 @@
-import React, { useState,useRef } from "react";
+import React, { useState, useRef } from "react";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
-import { Link,useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { AiOutlineEye } from "react-icons/ai";
 import sally13 from "../images/Saly-13 (1).png";
 import rec from "../images/Rectangle 1.png";
@@ -9,6 +9,7 @@ import { useAuth } from "../../Context/AuthContex"
 
 const SignIn1 = () => {
   const [error, setError] = useState("");
+  // eslint-disable-next-line
   const [validate, setValidate] = useState({});
   const [loading, setLoading] = useState(false);
   const emailRef = useRef();
@@ -16,25 +17,26 @@ const SignIn1 = () => {
   const passwordRef = useRef();
   const confirmPasswordRef = useRef();
   const nameRef = useRef();
+  // eslint-disable-next-line
   const { signup, currentUser } = useAuth();
   const history = useHistory();
 
-      const [values, setValues] = useState({
-        name: "",
-        email: "",
-        number: "",
-        password: "",
-      });
- 
-      const handleChange = (e) => {
-        const { name, value } = e.target;
-        setValues({
-          ...values,
-          [name]: value,
-        });
-      };
+  // const [values, setValues] = useState({
+  //   name: "",
+  //   email: "",
+  //   number: "",
+  //   password: "",
+  // });
 
-      
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setValues({
+  //     ...values,
+  //     [name]: value,
+  //   });
+  // };
+
+
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -133,14 +135,14 @@ const SignIn1 = () => {
               type={password ? "password" : "text"}
               id="password"
               ref={passwordRef}
-              //   value={values.password}
-              //  onChange={handleChange}
+            //   value={values.password}
+            //  onChange={handleChange}
             />
             {password ? (
               <AiOutlineEyeInvisible onClick={changePassword} />
             ) : (
-              <AiOutlineEye onClick={changePassword} />
-            )}
+                <AiOutlineEye onClick={changePassword} />
+              )}
           </div>
           <label
             htmlFor="password"
@@ -159,8 +161,8 @@ const SignIn1 = () => {
             {password ? (
               <AiOutlineEyeInvisible onClick={changePassword} />
             ) : (
-              <AiOutlineEye onClick={changePassword} />
-            )}
+                <AiOutlineEye onClick={changePassword} />
+              )}
           </div>
           <button
             disabled={loading}

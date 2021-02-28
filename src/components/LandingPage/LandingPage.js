@@ -1,11 +1,9 @@
-import React,{useState} from 'react'
-import logo from "../images/logo 2.png"
+import React from 'react'
+import logo  from "../images/logo 2.png"
 import "../Login/LandingPage.css"
 import Man from "../images/Saly-14.png"
 import Vector from "../images/Vector.png"
 import { Link } from "react-router-dom";
-import Toolbar from "../Toolbar/Toolbar"
-import Sidedrawer from "../Sidedrawer/Sidedrawer"
 
 
 
@@ -13,11 +11,11 @@ function LandingPage() {
 
   return (
     <>
-     
+
       <div className="mx-0 md:mx-20">
         <div className="flex justify-between ">
           <img className="md:flex hidden" src={logo} alt="logo" />
-        
+
           <div className="hidden md:flex md:items-center ">
             <Link to="/LogIn">
               <button className="mx-5 border rounded-lg LogIn p-5 md:px-10 md:py-5 text-white">
@@ -52,7 +50,7 @@ function LandingPage() {
           </div>
         </div>
       </div>
-    
+
     </>
   );
 }

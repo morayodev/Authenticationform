@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 
 function Sidedrawer(props) {
-      const {  children } = props;
+      // const { children } = props;
 
   const { logout } = useAuth();
   const [error, setError] = useState("");
@@ -70,20 +70,20 @@ function Sidedrawer(props) {
             </li>
             <li className="list-items">
               <i className="fas fa-history icons"></i>
-              <a href="#">History</a>
+              <a href=" https://github.com/">History</a>
             </li>
             <li className="list-items">
               <i className="far fa-bell icons"></i>
-              <a href="#">Notification</a>
+              <a href=" https://github.com/">Notification</a>
             </li>
             <li className="list-items">
               <i className="fal fa-cog icons"></i>
-              <a href="#">Settings</a>
+              <a href=" https://github.com/">Settings</a>
             </li>
             <hr className="line" />
             <li className="text-red-700 logOut">
               <i className="fal fa-sign-out"></i>
-              <a href="#" onClick={handleLogout}>
+              <a href=" https://github.com/" onClick={handleLogout}>
                 Logout
               </a>
             </li>

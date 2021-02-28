@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+// eslint-disable-next-line
 import logo from "../images/logo 2.png";
 import User from "../images/user.jpg";
 import "./Sidebar.css"
@@ -38,7 +39,7 @@ function Sidebar() {
             <p>adehaalewa64@gmail.com</p>
           </div>
           <ul>
-            <Link to="/Dashbord">
+            <Link to="/Dashboard">
               <li className="list-items">
                 <i className="far fa-home-lg-alt icons"></i>
                 Dashboard
@@ -68,22 +69,20 @@ function Sidebar() {
             </li>
             <li className="list-items">
               <i className="fas fa-history icons"></i>
-              <a href="#">History</a>
+              <a href=" https://github.com/">History</a>
             </li>
             <li className="list-items">
               <i className="far fa-bell icons"></i>
-              <a href="#">Notification</a>
+              <a href=" https://github.com/">Notification</a>
             </li>
             <li className="list-items">
               <i className="fal fa-cog icons"></i>
-              <a href="#">Settings</a>
+              <a href=" https://github.com/">Settings</a>
             </li>
             <hr classname="line" />
-            <li className="text-red-700 logOut">
+            <li className="text-red-700 logOut" onClick={handleLogout}>
               <i className="fal fa-sign-out"></i>
-              <a href="#" onClick={handleLogout}>
                 Logout
-              </a>
             </li>
           </ul>
       

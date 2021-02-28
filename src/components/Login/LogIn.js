@@ -54,7 +54,7 @@ const LogIn = (props) => {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value)
-       history.push("/")
+       history.push("/Dashboard")
     } catch {
       setError("Failed to sign in");
     }
