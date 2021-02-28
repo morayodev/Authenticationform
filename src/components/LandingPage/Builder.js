@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import Sidedrawer from "../Sidedrawer/Sidedrawer"
-import LandingPage from "./LandingPage"
 import Toolbar from "../Toolbar/Toolbar"
-import Dashboard from "../Dashboard/Dashboard";
-import { Route } from "react-router-dom";
 import PrivateRoutes from '../PrivateRoute/PrivateRoutes';
 // import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
