@@ -17,7 +17,7 @@ function Sidebar() {
     setError("")
       try {
       await logout()
-      history.push("/LogIn")
+      history.push("/")
     } catch {
       setError("Failed to log Out")
     }
