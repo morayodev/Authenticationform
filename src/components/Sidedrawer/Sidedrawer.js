@@ -85,7 +85,6 @@ function Sidedrawer(props) {
               <i className="fal fa-sign-out"></i>
              >
                Logout
-              </a>
             </li>
           </ul>
         </div>
