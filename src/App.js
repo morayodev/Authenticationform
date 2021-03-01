@@ -6,7 +6,7 @@ import LogIn from "./components/Login/LogIn";
 import SignIn1 from "./components/Login/SignIn1"
 import { AuthProvider } from "./Context/AuthContex";
 // import Sidebar from "./components/Sidebar/Sidebar"
-// import Dashboard from "./components/Dashboard/Dashboard"
+import Dashboard from "./components/Dashboard/Dashboard"
 import Builder from "./components/LandingPage/Builder";
 import Addfunds from "./components/Add funds/Addfunds"
 import Airtime from "./components/Airtime/Airtime"
@@ -25,7 +25,7 @@ function App() {
 
             <Route path="/LogIn" component={LogIn} />
             <Route path="/SignIn1" component={SignIn1} />
-            {/* <Route exact path="/Dashboard" component={Dashboard} /> */}
+            <Route exact path="/Dashboard" component={Dashboard} />
             {/* <Route exact path="/Builder" component={Builder}/> */}
 
             <Route exact path="/Addfunds" component={Addfunds} />
