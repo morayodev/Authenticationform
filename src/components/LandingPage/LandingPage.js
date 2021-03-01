@@ -17,7 +17,7 @@ function LandingPage() {
           <img className="md:flex hidden" src={logo} alt="logo" />
 
           <div className="hidden md:flex md:items-center ">
-            <Link to="/LogIn">
+            {/* <Link to="/LogIn">
               <button className="mx-5 border rounded-lg LogIn p-5 md:px-10 md:py-5 text-white">
                 Login
               </button>
@@ -26,7 +26,7 @@ function LandingPage() {
               <button className="mx-5 border rounded-lg SignIn  p-5 md:px-10 md:py-5">
                 Sign up
               </button>
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className="flex justify-between text-center md:text-left">
@@ -38,7 +38,7 @@ function LandingPage() {
             <p className="font-semibold text-2xl md:text-3xl ml-5 mb-10">
               Anytime.Anyday
             </p>
-            <Link to="/Builder">
+            <Link to="/Dashboard">
               <button className="mx-5 border rounded-lg LogIn px-10 py-5 text-white">
                 Get Started
               </button>
