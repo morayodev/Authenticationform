@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
-import Builder from "./components/LandingPage/Builder"
 import LogIn from "./components/Login/LogIn";
 import SignIn1 from "./components/Login/SignIn1"
 import { AuthProvider } from "./Context/AuthContex";
@@ -19,5 +18,8 @@ function App() {
     </AuthProvider>
   );
 }
+
+
+
 
 export default App;
