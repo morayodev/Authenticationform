@@ -11,8 +11,7 @@ function App() {
   return (
     <AuthProvider>
       <Switch>
-         <Route exact path="/" component={LandingPage} />
-        <Route exact path="/LogIn" component={LogIn} />
+        <Route exact path="/" component={LogIn} />
         <Route exact path="/SignIn1" component={SignIn1} />
         <Builder />
       </Switch>
