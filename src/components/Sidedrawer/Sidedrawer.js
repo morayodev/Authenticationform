@@ -83,7 +83,6 @@ function Sidedrawer(props) {
             <hr className="line" />
             <li className="text-red-700 logOut" onClick={handleLogout}>
               <i className="fal fa-sign-out"></i>
-             >
                Logout
             </li>
           </ul>
